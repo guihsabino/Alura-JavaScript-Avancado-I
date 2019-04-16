@@ -5,21 +5,23 @@ class Negociacao {
         this._data = data;
         this._quantidade = quantidade;
         this._valor = valor;
+        // congelando os atributos após add pra não permitir alterações
+        Object.freeze(this);
     }
 
     /* Metodos acessadores, ja que tem o (_) pra não permitir acesso externo à classe */
 
-    getVolume() {
+    get volume() {
         // obtem e calcula o volume da negociação
         return this._quantidade * this._valor;
     }
-    getData() {
+    get data() {
         return this._data;
     }
-    getQuantidade() {
+    get quantidade() {
         return this._quantidade;
     }
-    getValor() {
+    get valor() {
         return this._valor;
     }
 
