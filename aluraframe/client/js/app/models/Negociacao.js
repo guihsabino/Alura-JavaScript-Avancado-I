@@ -2,7 +2,8 @@ class Negociacao {
     // Esse construtor já seta o que cada negociação vai ter por padrão
     constructor(data, quantidade, valor) {
 
-        this._data = data;
+        // como o date não congela, ele chama uma nova data, assim retorna só uma cópia aqui também
+        this._data = new Date(data.getTime());
         this._quantidade = quantidade;
         this._valor = valor;
         // congelando os atributos após add pra não permitir alterações
