@@ -16,7 +16,8 @@ class Negociacao {
         return this._quantidade * this._valor;
     }
     get data() {
-        return this._data;
+        // como o date não congela, ele chama uma nova data, assim retorna só uma cópia e não permite alterações
+        return new Date(this._data.getTime());
     }
     get quantidade() {
         return this._quantidade;
