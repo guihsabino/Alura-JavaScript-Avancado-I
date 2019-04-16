@@ -64,12 +64,9 @@
     <script src="js/app/models/Negociacao.js"></script>
     <!-- Área de manipulação da classe negociação-->
     <script>
-        var n1 = new Negociacao();
+        var n1 = new Negociacao(new Date(), 5, 700);
+        var volume = n1.obtemVolue();
         console.log(n1);
-
-        var n2 = new Negociacao();
-        console.log(n2);
-
     </script>
 </body>
 
