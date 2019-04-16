@@ -3,11 +3,13 @@ class NegociacaoController {
     adiciona(event) {
         event.preventDefault();
 
-        let inputData = document.querySelector('#data');
-        let inputQuantidade = document.querySelector('#quantidade');
-        let inputValor = document.querySelector('#valor');
+        // Atribuindo a um caracter a função de selecionar, pra facilitar
+        let $ = documento.querySelector;
 
-        
+        let inputData = $('#data');
+        let inputQuantidade = $('#quantidade');
+        let inputValor = $('#valor');
+
     }
 
 }
