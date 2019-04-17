@@ -1,4 +1,5 @@
 class DateHelper {
+
     textoParaData(texto) {
 
         // Dessa forma, a string que vem é transformada em um Array
