@@ -18,20 +18,15 @@ class NegociacaoController {
         // Dessa forma, a string que vem é transformada em um Array
         let data = new Date(...
             this._inputData.value.split('-').map(function (item, indice) {
-                if (indice == 1) {
-                    return item - 1;
-                } else {
-                    return item;
-                }
+                // Usado módulo, pois com 0 e com 2 da 0, so no item 1 que sobra 1 pra subtrair
+                return item - indice % 2
             })
         );
-
-        // Gerando uma nova negociação
+        console.log(data);
+        /* Gerando uma nova negociação
         let negociacao = new Negociacao(
             this._inputData.value,
             this._inputQuantidade.value,
-            this._inputValor.value
-
-        );
+            this._inputValor.value); */
     }
 }
