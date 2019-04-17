@@ -16,8 +16,8 @@ class NegociacaoController {
 
         //Criando uma variável que altera o formato da data (2ª maneira)
         // Dessa forma, a string que vem é transformada em um Array
-        let data = new Date(...
-            this._inputData.value.split('-').map(function (item, indice) {
+        let data = new Date(
+            ...this._inputData.value.split('-').map(function (item, indice) {
                 // Usado módulo, pois com 0 e com 2 da 0, so no item 1 que sobra 1 pra subtrair
                 return item - indice % 2
             })
