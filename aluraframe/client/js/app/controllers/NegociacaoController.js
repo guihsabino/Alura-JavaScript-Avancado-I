@@ -7,6 +7,7 @@ class NegociacaoController {
         this._inputData = $('#data');
         this._inputQuantidade = $('#quantidade');
         this._inputValor = $('#valor');
+        this._listaNegociacoes = new ListaNegociacoes();
     }
 
     adiciona(event) {
@@ -24,5 +25,15 @@ class NegociacaoController {
             this._inputQuantidade.value,
             this._inputValor.value
         );
+
+        this._listaNegociacoes.adiciona(negociacao);
+    }
+    // Metodo para limpar formulario
+    _limpaFormulario() {
+        this._inputData.value = '';
+        this._inputQuantidade.value = 1;
+        this._inputValor.value = 0.0;
+
+        this._inputQuantidade.focus();
     }
 }
