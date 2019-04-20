@@ -18,15 +18,21 @@ class NegociacaoController {
         // Criando a data usando o DateHelper e passando pra Negociação
         let helper = new DateHelper();
 
-        //Gerando uma nova negociação
-        let negociacao = new Negociacao(
+        // Cria negociação e add ela na lista
+        this._listaNegociacoes.adiciona(this._criaNegociacao);
+        // Limpa o formulario após add
+        this._limpaFormulario();
+    }
+    // Metodo para criar negociação
+    _criaNegociacao() {
+
+        return new Negociacao(
             // Colocando o helper no lugar da data, pra ele fazer o paranaue
             helper.textoParaData(this._inputData.value),
             this._inputQuantidade.value,
             this._inputValor.value
         );
 
-        this._listaNegociacoes.adiciona(negociacao);
     }
     // Metodo para limpar formulario
     _limpaFormulario() {
@@ -34,6 +40,6 @@ class NegociacaoController {
         this._inputQuantidade.value = 1;
         this._inputValor.value = 0.0;
 
-        this._inputQuantidade.focus();
+        this._inputData.focus();
     }
 }
