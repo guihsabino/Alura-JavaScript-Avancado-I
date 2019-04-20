@@ -15,9 +15,8 @@ class DateHelper {
 
     dataParaTexto(data) {
         // Formatando a exibição da data para o usuário, lembrando que o mais 1 resolve a questão do mês
-        // e está em parenteses pra ser executado primeiro
-        return data.getDate() +
-            '/' + (data.getMonth() + 1) +
-            '/' + data.getFullYear();
+
+        return `${data.getDate()}/${data.getMonth() + 1}/${data.getFullYear()}`;
+
     }
 }
