@@ -1,5 +1,11 @@
 class DateHelper {
 
+
+    constructor() {
+
+        throw new Error('Esta classe não pode ser instanciada!');
+    }
+
     textoParaData(texto) {
 
         // Dessa forma, a string que vem é transformada em um Array
