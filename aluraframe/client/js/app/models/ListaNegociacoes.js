@@ -14,8 +14,8 @@ class ListaNegociacoes {
 
     // Permite listar essas negociações
     get negociacoes() {
-
-        return this._negociacoes;
+        // Copia da lista com conteudo de lista original
+        return [].concat(this._negociacoes);
 
     }
 }

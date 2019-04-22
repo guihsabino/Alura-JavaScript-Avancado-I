@@ -8,6 +8,11 @@ class NegociacaoController {
         this._inputQuantidade = $('#quantidade');
         this._inputValor = $('#valor');
         this._listaNegociacoes = new ListaNegociacoes();
+        this._negociacoesView = $('#negociacoesView');
+        this._negociacoesView.update(this._listaNegociacoes);
+        this._mensagem = new Mensagem;
+        this._mensagemView = new MensagemView($('#mensagemView'));
+        this._mensagemView.update(this._mensagem);
     }
 
     adiciona(event) {
@@ -20,6 +25,10 @@ class NegociacaoController {
 
         // Cria negociação e add ela na lista
         this._listaNegociacoes.adiciona(this._criaNegociacao);
+        this._negociacoesView.update(this._listaNegociacoes);
+        // Mensagem ao adicionar, e atualizando
+        this._mensagem.texto = 'Negociação adicionada com sucesso';
+        this._mensagemView.update(this._mensagem);
         // Limpa o formulario após add
         this._limpaFormulario();
     }
