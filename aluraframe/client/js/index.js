@@ -1,22 +1,37 @@
-// Criando a variavel campos, para puxar as informações via array list do HTML
 var campos = [
-    document.querySelector('#data'),
-    document.querySelector('#valor'),
-    document.querySelector('#quantidade')
+  document.querySelector('#data'),
+  document.querySelector('#quantidade'),
+  document.querySelector('#valor')  
 ];
 
 console.log(campos);
-// Adicionando uma função ao Botão Incluir para dar Submit
-document.querySelector(".form").addEventListener('submit', function (event) {
-    // Criando uma tr a cada vez que o botão for acionado
-    var tr = document.createElement("tr");
 
-    campos.forEach(function (campo) {
+var tbody = document.querySelector('table tbody');
 
-        var td = document.createElement("td");
-        td.textContent = campo.value;
-        tr.appendChild(td);
-    });
-
-    var tdVolume
+document.querySelector('.form').addEventListener('submit', function(event) {
+    
+   event.preventDefault();
+   
+   var tr = document.createElement('tr');
+   
+   campos.forEach(function(campo) {
+       
+       var td = document.createElement('td');
+       td.textContent = campo.value;
+       tr.appendChild(td);
+   });
+   
+  var tdVolume = document.createElement('td');
+  tdVolume.textContent = campos[1].value * campos[2].value; 
+  
+  tr.appendChild(tdVolume);
+  
+  tbody.appendChild(tr);
+  
+  campos[0].value = '';
+  campos[1].value = 1;
+  campos[2].value = 0;
+  
+  campos[0].focus();
+   
 });
